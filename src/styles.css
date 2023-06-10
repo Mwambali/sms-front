@@ -1,0 +1,660 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background: #f0f6fa;
+    /* Light blue */
+}
+
+.container {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* .appNavbar {
+    text-align: center;
+}
+
+.appNavbar a {
+    color: #000;
+    text-decoration: unset;
+} */
+
+.appNavbar {
+    text-align: center;
+    background-color: #579bcc;
+    /* Beautiful blue background color */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.appNavbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.appNavbar li {
+    display: inline-block;
+    position: relative;
+    /* Added position relative for dropdown positioning */
+}
+
+.appNavbar .dropdown-name {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    /* White color for the names */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.appNavbar .dropdown-name:hover {
+    background-color: #3072a9;
+    /* Darker shade of blue on hover */
+}
+
+.appNavbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 0;
+}
+
+.appNavbar .dropdown-menu li {
+    display: block;
+}
+
+.appNavbar li:hover .dropdown-menu {
+    display: block;
+}
+
+.appNavbar .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.appNavbar .dropdown-menu a:hover {
+    background-color: #d8e5eb;
+    /* Light blue - lighter shade */
+}
+
+.appNavbar .back-to-home {
+    top: 0;
+    right: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.appNavbar .back-to-home:hover {
+    color: #3072a9;
+    /* Hover color */
+}
+
+.home__wrapper {
+    background: #fff;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+.home__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 12px;
+}
+
+.home__left h1 {
+    font-size: 20px;
+}
+
+.home__left img {
+    width: 200px;
+    height: 100px;
+}
+
+.home__left ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.home__actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.home__action {
+    margin: 10px 0px;
+}
+
+.home__action button {
+    cursor: pointer;
+    background-color: #f0f6fa;
+    /* Light blue */
+    border-radius: 3px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    color: #000;
+}
+
+/* Hover effect */
+.home__action button:hover {
+    background-color: #d8e5eb;
+    /* Light blue - lighter shade */
+}
+
+.class__wrapper {
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.class__wrapper img {
+    width: 100px;
+}
+
+.class__wrapper .class__wrapper__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.class__wrapper form {
+    margin-top: 20px;
+}
+
+.class__wrapper form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.class__wrapper form input {
+    padding: 10px 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.class__wrapper button {
+    padding: 10px 5px;
+    cursor: pointer;
+    background-color: #000;
+    border: unset;
+    color: #fff;
+}
+
+/* Hover effect */
+.class__wrapper button:hover {
+    background-color: #444;
+}
+
+.app__title {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.tags {
+    min-width: 400px;
+    max-width: 600px;
+    margin: 1.5em 0;
+}
+
+.disabled .tags {
+    display: none;
+}
+
+.disabled .tags+input,
+.disabled .tags+textarea {
+    display: inline-block !important;
+    width: 350px;
+    padding: .5em;
+    border: 1px inset;
+}
+
+.home__manager {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+.home__manager a {
+    text-decoration: unset;
+    color: #000;
+    font-weight: bold;
+}
+
+.student__wrapper {
+    margin-top: 10px;
+}
+
+.student__wrapper table {
+    margin-top: 60px;
+}
+
+.student__wrapper select {
+    width: 100%;
+}
+
+.students__cover {
+    background-color: #fff;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 20px;
+    font-size: 15px;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.one__student {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 20px;
+}
+
+.one__student__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.one__student__left img {
+    width: 150px;
+}
+
+.one__student__left h1 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.one__student__right ul li {
+    margin-bottom: 10px;
+}
+
+.one__student__right span {
+    font-size: 15px;
+}
+
+.one__actions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.one__actions a {
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: unset;
+}
+
+.del-btn {
+    border: unset;
+    padding: 5px 10px;
+    margin: 0px 18px;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.classes__wrapper {
+    background: #fff;
+    padding: 10px;
+}
+
+.classes__wrapper li {
+    margin-bottom: 12px;
+}
+
+.classes__wrapper a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .home__wrapper {
+        grid-template-columns: 100%;
+    }
+
+    .home__left {
+        padding-right: 0;
+    }
+
+    .class__wrapper {
+        grid-template-columns: 100%;
+    }
+
+    .appNavbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .appNavbar ul {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .appNavbar li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .appNavbar .dropdown-name {
+        padding: 8px;
+    }
+}
+
+
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background: #d8d8d8;
+}
+
+.container {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.appNavbar {
+    text-align: center;
+}
+
+.appNavbar a {
+    color: #000;
+    text-decoration: unset;
+}
+
+.home__wrapper {
+    background: #fff;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+.home__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 12px;
+}
+
+.home__left h1 {
+    font-size: 20px;
+}
+
+.home__left img {
+    width: 200px;
+    height: 100px;
+}
+
+.home__left ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.home__actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.home__action {
+    margin: 10px 0px;
+}
+
+.home__action button {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    color: #000;
+}
+
+.class__wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.class__wrapper img {
+    width: 100px;
+}
+
+.class__wrapper .class__wrapper__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.class__wrapper form {
+    margin-top: 20px;
+}
+
+.class__wrapper form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.class__wrapper form input {
+    padding: 10px 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.class__wrapper button {
+    padding: 10px 5px;
+    cursor: pointer;
+    background-color: #000;
+    border: unset;
+    color: #fff;
+}
+
+.app__title {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.tags {
+    min-width: 400px;
+    max-width: 600px;
+    margin: 1.5em 0;
+}
+
+.disabled .tags {
+    display: none;
+}
+
+.disabled .tags+input,
+.disabled .tags+textarea {
+    display: inline-block !important;
+    width: 350px;
+    padding: .5em;
+    border: 1px inset;
+}
+
+.home__manager {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+.home__manager a {
+    text-decoration: unset;
+    color: #000;
+    font-weight: bold;
+}
+
+.student__wrapper {
+    margin-top: 10px;
+}
+
+.student__wrapper table {
+    margin-top: 60px;
+}
+
+.student__wrapper select {
+    width: 100%;
+}
+
+.students__cover {
+    background-color: #fff;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 20px;
+    font-size: 15px;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.one__student {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 20px;
+}
+
+.one__student__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.one__student__left img {
+    width: 150px;
+}
+
+.one__student__left h1 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.one__student__right ul li {
+    margin-bottom: 10px;
+}
+
+.one__student__right span {
+    font-size: 15px;
+}
+
+.one__actions {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.one__actions a {
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: unset;
+}
+
+.del-btn {
+    border: unset;
+    padding: 5px 10px;
+    margin: 0px 18px;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.classes__wrapper {
+    background: #fff;
+    padding: 10px;
+}
+
+.classes__wrapper li {
+    margin-bottom: 12px;
+}
+
+.classes__wrapper a {
+    color: #000;
+    text-decoration: none;
+} */
