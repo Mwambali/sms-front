@@ -8,9 +8,12 @@ import { Jwt } from '../models/Jwt';
 import { LoginUser } from '../models/LoginUser.interface';
 import { NewUser } from '../models/NewUser';
 
+const BASE_URL = 'http://localhost:5000/api';
+
 const register = async (newUser: NewUser): Promise<DisplayUser | null> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_BASE_API}/auth/register`,
+    // `${process.env.REACT_APP_BASE_API}/auth/register`,
+    `${BASE_URL}/auth/register`,
     newUser
   );
 
@@ -21,7 +24,8 @@ const login = async (
   user: LoginUser
 ): Promise<{ jwt: Jwt; user: DisplayUser | null }> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_BASE_API}/auth/login`,
+    // `${process.env.REACT_APP_BASE_API}/auth/login`,
+    `${BASE_URL}/auth/login`,
     user
   );
 
