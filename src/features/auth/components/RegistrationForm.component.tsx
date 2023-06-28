@@ -23,13 +23,30 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux/hooks';
 import { register, reset } from '../authSlice';
 
 const RegistrationFormComponent: FC = () => {
+  // const {
+  //   text: name,
+  //   shouldDisplayError: nameHasError,
+  //   textChangeHandler: nameChangeHandler,
+  //   inputBlurHandler: nameBlurHandler,
+  //   clearHandler: nameClearHandler,
+  // } = useInput(validateNameLength);
+
   const {
-    text: name,
-    shouldDisplayError: nameHasError,
-    textChangeHandler: nameChangeHandler,
-    inputBlurHandler: nameBlurHandler,
-    clearHandler: nameClearHandler,
+    text: firstName,
+    shouldDisplayError: firstNameHasError,
+    textChangeHandler: firstNameChangeHandler,
+    inputBlurHandler: firstNameBlurHandler,
+    clearHandler: firstNameClearHandler,
   } = useInput(validateNameLength);
+
+  const {
+    text: lastName,
+    shouldDisplayError: lastNameHasError,
+    textChangeHandler: lastNameChangeHandler,
+    inputBlurHandler: lastNameBlurHandler,
+    clearHandler: lastNameClearHandler,
+  } = useInput(validateNameLength);
+
 
   const {
     text: email,
@@ -55,12 +72,20 @@ const RegistrationFormComponent: FC = () => {
     clearHandler: confirmPasswordClearHandler,
   } = useInput(validatePasswordLength);
 
+  // const clearForm = () => {
+  //   nameClearHandler();
+  //   emailClearHandler();
+  //   passwordClearHandler();
+  //   confirmPasswordClearHandler();
+  // };
   const clearForm = () => {
-    nameClearHandler();
+    firstNameClearHandler();
+    lastNameClearHandler();
     emailClearHandler();
     passwordClearHandler();
     confirmPasswordClearHandler();
   };
+
 
   const dispatch = useAppDispatch();
 
@@ -81,8 +106,25 @@ const RegistrationFormComponent: FC = () => {
 
     if (password !== confirmPassword) return;
 
+    // if (
+    //   nameHasError ||
+    //   emailHasError ||
+    //   passwordHasError ||
+    //   confirmPasswordHasError
+    // )
+    //   return;
+
+    // if (
+    //   name.length === 0 ||
+    //   email.length === 0 ||
+    //   password.length === 0 ||
+    //   confirmPassword.length === 0
+    // )
+    //   return;
+
     if (
-      nameHasError ||
+      firstNameHasError ||
+      lastNameHasError ||
       emailHasError ||
       passwordHasError ||
       confirmPasswordHasError
@@ -90,7 +132,8 @@ const RegistrationFormComponent: FC = () => {
       return;
 
     if (
-      name.length === 0 ||
+      firstName.length === 0 ||
+      lastName.length === 0 ||
       email.length === 0 ||
       password.length === 0 ||
       confirmPassword.length === 0
@@ -98,7 +141,9 @@ const RegistrationFormComponent: FC = () => {
       return;
 
     const newUser: NewUser = {
-      name,
+      // name,
+      firstName,
+      lastName,
       email,
       password,
     };
@@ -125,7 +170,7 @@ const RegistrationFormComponent: FC = () => {
             Create account
           </Typography>
 
-          <InputLabel
+          {/* <InputLabel
             sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
             htmlFor='name'
           >
@@ -142,7 +187,45 @@ const RegistrationFormComponent: FC = () => {
             id='name'
             variant='outlined'
             size='small'
+          /> */}
+          <InputLabel
+            sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
+            htmlFor='firstName'
+          >
+            First Name
+          </InputLabel>
+          <TextField
+            value={firstName}
+            onChange={firstNameChangeHandler}
+            onBlur={firstNameBlurHandler}
+            error={firstNameHasError}
+            helperText={firstNameHasError ? 'Enter your first name' : ''}
+            type='text'
+            name='firstName'
+            id='firstName'
+            variant='outlined'
+            size='small'
           />
+
+          <InputLabel
+            sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
+            htmlFor='lastName'
+          >
+            Last Name
+          </InputLabel>
+          <TextField
+            value={lastName}
+            onChange={lastNameChangeHandler}
+            onBlur={lastNameBlurHandler}
+            error={lastNameHasError}
+            helperText={lastNameHasError ? 'Enter your last name' : ''}
+            type='text'
+            name='lastName'
+            id='lastName'
+            variant='outlined'
+            size='small'
+          />
+
 
           <InputLabel
             sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
