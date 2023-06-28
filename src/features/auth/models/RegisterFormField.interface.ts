@@ -1,5 +1,7 @@
 export interface RegisterFormField {
-  name: string;
+  // name: string;
+  firstName: string,
+  lastName: string,
   email: string;
   password: string;
   confirmPassword: string;
