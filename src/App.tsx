@@ -35,6 +35,7 @@ import ViewStudent from "./components/Views/ViewStudent";
 import SigninPage from "./pages/Signin.page";
 import RegisterPage from "./pages/Register.page";
 import Courses from "./components/Courses/Course";
+import PrivateRoute from "./features/auth/components/PrivateRoute";
 
 /* Avatar */
 const generator = new AvatarGenerator();
@@ -128,7 +129,7 @@ const App: React.FC = () => {
           <Route path="/about-class/:id" element={<ViewClass />} />
           <Route path="/about-student/:id" element={<ViewStudent />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/" element={<HomeComponent />} />
+          <Route path="/" element={<PrivateRoute page={<HomeComponent />} />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/signin' element={<SigninPage />} />
           <Route path='*' element={<Navigate to='/' />} />
