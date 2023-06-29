@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAppDispatch } from '../hooks/redux/hooks';
+import { logout } from '../features/auth/authSlice';
 
 const Navbar: React.FC = () => {
     const location = useLocation();
+    const dispatch = useAppDispatch();
 
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
     // Check if the current route is "/"
     const isHomePage = location.pathname === '/';
+
     return (
         <nav className="appNavbar">
             {isHomePage ? (
@@ -53,6 +60,20 @@ const Navbar: React.FC = () => {
                     </li>
                 </ul>
             )}
+            <div>
+                <a
+                    onClick={logoutHandler}
+                    style={{
+                        backgroundColor: 'lightcyan',
+                        cursor: 'pointer',
+                        height: '40px',
+                        width: '60px',
+                        padding: '8px'
+                    }}
+                >
+                    Logout
+                </a>
+            </div>
         </nav>
     );
 };

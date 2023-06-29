@@ -46,7 +46,8 @@ const logout = (): void => {
 
 const verifyJwt = async (jwt: string): Promise<boolean> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_BASE_API}/auth/verify-jwt`,
+    // `${process.env.REACT_APP_BASE_API}/auth/verify-jwt`,
+    `${BASE_URL}/auth/verify-jwt`,
     { jwt }
   );
 
